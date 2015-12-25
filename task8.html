@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Task 8</title>
+<style>
+body{
+font-family:Helvetica;
+}
+table, td {
+    border: 1px solid red;
+}
+</style>
+</head>
+<body>
+		
+		<p>Click the button to add a new row :)</p>
+		
+		<table id="table">
+		  <tr>
+		    <td>first row</td>
+		    <td>first row</td>
+		  </tr>
+		  <tr>
+		    <td>second row</td>
+		    <td>second row</td>
+		  </tr>
+		  <tr>
+		    <td>third row</td>
+		    <td>third row</td>
+		  </tr>
+		</table>
+		<br>
+		
+		<button onclick="addRows()">Add new Row</button>
+		
+		<script>
+		function addRows() {
+		    var table = document.getElementById("table");
+		    var row = table.insertRow(0);
+		    var col_1 = row.insertCell(0);
+		    var col_2 = row.insertCell(1);
+		    col_1.innerHTML = "new";
+		    col_2.innerHTML = "new";
+		}
+		</script>
+
+
+
+</body>
+</html>

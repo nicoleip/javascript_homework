@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Task 5</title>
+
+		<style>
+		body{
+		font-family:Helvetica;
+		padding-top :20px;
+		}
+		label,input{
+		display: block;
+		}
+		#radius{
+		background-color:#7fff00;
+		}
+		#volume{
+		background-color:#ffff00;
+		}
+		</style>
+</head>
+<body>
+		
+		<p>Enter the size of the radius and get the volume of the sphere:</p>
+		
+		<form action="" method="post" id="volume_form">
+		<label for="radius">Radius:</label>
+		<input type="text" name="radius" id="radius" required>
+		<br>
+		<label for="volume">Volume:</label>
+		<input type="text" name="volume" id="volume">
+		<br>
+		<input type="submit" value="Calculate" id="submit">
+		</form>
+		
+		<script>
+		function calculate_volume()
+		{
+		 var volume;
+		 var radius = document.getElementById('radius').value;
+		 radius = Math.abs(radius);
+		 volume = (4/3) * Math.PI * Math.pow(radius, 3);
+		 volume = volume.toFixed(3);
+		 document.getElementById('volume').value = volume;
+		 return false;
+		} 
+		window.onload = document.getElementById('volume_form').onsubmit = calculate_volume;
+		
+		</script>
+
+</body>
+</html>

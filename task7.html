@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Task7</title>
+
+		<style>
+		body{
+		font-family:Helvetica;
+		padding-top :20px;
+		
+		}
+		</style>
+</head>
+<body>
+		<form action="" method="post" id="convert_form">
+		<fieldset>
+		<label for="convert">Convert:</label>
+		<input type="text" name="convert" id="convert" required>
+		<select id="from_units">
+		<option value="0.45359237">lbs</option>
+		<option value="2.2" selected>kg</option>
+		
+		</select>
+		
+		<select id="to_units">
+		<option value="0.45359237" selected>lbs</option>
+		<option value="2.2">kg</option>
+		
+		</select>
+		<input type="submit" value="Calculate" id="submit">
+		<br>
+		<br>
+		<label for="result">Result :</label>
+		<br>
+		<input type="text" name="result" id="result">
+		</fieldset>
+		</form>
+		
+		<script>
+		function convert_func()
+		{
+		 var result;
+		 var convert = document.getElementById('convert').value;
+		 covert = Math.abs(convert);
+		 
+		 if (document.getElementById('from_units').value === document.getElementById('to_units').value){
+			 result = convert;
+			 result= result.toFixed(3);
+			 document.getElementById('result').value = result;
+			 return false;
+		 }
+		 
+		 else if(document.getElementById('from_units').value == 2.2){
+			
+			 result = convert*2.2;
+			 result= result.toFixed(3);
+			 document.getElementById('result').value = result;
+			 return false;
+			 
+		 }else{
+			 result = convert*0.45359237;
+			 result= result.toFixed(3);
+			 document.getElementById('result').value = result;
+			 return false;	 
+		 }
+		} 
+		window.onload = document.getElementById('convert_form').onsubmit = convert_func;
+		
+		</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Task 6</title>
+<script>
+	currentIndex=0;	
+	MyImages=new Array();
+	MyImages[0]='images/gallery1.png';
+	MyImages[1]='images/gallery2.jpg';
+	MyImages[2]='images/gallery3.jpg';
+	MyImages[3]='images/gallery4.jpg';
+	
+	imagesPreloaded = new Array(4)
+	
+	for (var i = 0; i < MyImages.length ; i++)
+	{
+	imagesPreloaded[i] = new Image(120,120)
+	imagesPreloaded[i].src=MyImages[i]
+	}
+	
+	function newImage() {
+		currentIndex=Math.round(Math.random()*3)	
+		document.theImage.src=imagesPreloaded[currentIndex].src		
+	}
+
+
+</script>
+
+</head>
+<body onload="newImage()">
+
+		<table>		
+		<tr>		
+		<td>		
+		<img src="images/gallery1.png" name="theImage" id="theImage" alt="Slide Show" height="120" width="120" />
+		</td>
+		
+		</tr>
+		
+		<tr>
+		
+		<td>
+		
+		<form>
+		
+		<p>
+		
+		
+		
+		<input type="button" value="Random Image" onclick="newImage()" />
+		
+		</p>
+		
+		</form>
+		
+		</td>
+		
+		</tr>
+		
+		</table>
+
+
+
+</body>
+</html>
